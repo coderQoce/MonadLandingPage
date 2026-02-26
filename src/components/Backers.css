@@ -1,0 +1,190 @@
+.backers {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.backers::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(108, 59, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.backers-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.backers-header.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
+
+.backers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.backer-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+}
+
+.backer-card.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.8s ease;
+}
+
+.backer-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: var(--primary-purple);
+  box-shadow: var(--shadow-glow);
+  background: rgba(108, 59, 255, 0.1);
+}
+
+.backer-card:hover .backer-logo {
+  color: var(--white);
+}
+
+.backer-card:hover .backer-name {
+  color: var(--primary-purple);
+}
+
+.backer-logo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--medium-gray);
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.backer-card:hover .backer-logo {
+  filter: grayscale(0%);
+}
+
+.backer-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.backer-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light-gray);
+  transition: all 0.3s ease;
+}
+
+.backers-footer {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.backers-footer.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease 0.4s;
+}
+
+.backers-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat {
+  padding: 2rem;
+  background: rgba(108, 59, 255, 0.1);
+  border: 1px solid rgba(108, 59, 255, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .backers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .backer-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .backers-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .backers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .backer-card {
+    padding: 1.5rem;
+  }
+
+  .backer-logo {
+    height: 35px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}

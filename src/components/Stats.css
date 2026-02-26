@@ -1,0 +1,222 @@
+.stats {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(108, 59, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.stats-header.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+}
+
+.stat-card.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.8s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary-purple);
+  box-shadow: var(--shadow-glow);
+}
+
+.stat-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(108, 59, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.stat-card:hover .stat-glow {
+  opacity: 1;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(108, 59, 255, 0.2);
+  border: 2px solid var(--primary-purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--primary-purple);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+  background: var(--gradient-primary);
+  color: var(--white);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-glow);
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  animation: counter 0.5s ease-out;
+}
+
+.stat-label {
+  color: var(--light-gray);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stats-footer {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.stats-footer.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease 0.4s;
+}
+
+.stats-highlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.highlight-item {
+  padding: 1.5rem;
+  background: rgba(108, 59, 255, 0.1);
+  border: 1px solid rgba(108, 59, 255, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.highlight-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.highlight-label {
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@keyframes counter {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 2rem;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+  }
+
+  .stats-highlight {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .highlight-number {
+    font-size: 1.5rem;
+  }
+}
