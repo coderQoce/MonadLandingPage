@@ -1873,6 +1873,7 @@ export const ecosystemApps = [
 ];
 
 export const getCategoriesWithCounts = () => [
+  { id: 'all', name: 'All', count: ecosystemApps.length },
   { id: 'dex', name: 'DEX', count: ecosystemApps.filter(app => app.category === 'Dex').length },
   { id: 'lending', name: 'Lending', count: ecosystemApps.filter(app => app.category === 'Lending').length },
   { id: 'lst', name: 'LST', count: ecosystemApps.filter(app => app.category === 'LST').length },
@@ -1887,8 +1888,7 @@ export const getCategoriesWithCounts = () => [
   { id: 'gamefi', name: 'GameFi', count: ecosystemApps.filter(app => app.category === 'GameFi').length },
   { id: 'socialfi', name: 'SocialFi', count: ecosystemApps.filter(app => app.category === 'SocialFi').length },
   { id: 'ai', name: 'AI', count: ecosystemApps.filter(app => app.category === 'AI').length },
-  { id: 'others', name: 'Others', count: ecosystemApps.filter(app => app.category === 'Others').length },
-  { id: 'all', name: 'All', count: ecosystemApps.length }
+  { id: 'others', name: 'Others', count: ecosystemApps.filter(app => app.category === 'Others').length }
 ];
 
 export const categories = getCategoriesWithCounts();
