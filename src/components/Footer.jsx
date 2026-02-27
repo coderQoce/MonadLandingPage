@@ -48,17 +48,10 @@ const Footer = () => {
           <div className="footer-top">
             <div className="footer-brand">
               <div className="footer-logo">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                  <circle cx="20" cy="20" r="18" stroke="url(#gradient)" strokeWidth="2" />
-                  <path d="M20 8L28 20L20 32L12 20L20 8Z" fill="url(#gradient)" />
-                  <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#6C3BFF" />
-                      <stop offset="100%" stopColor="#8B5CF6" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                <span>Monad</span>
+                  <div className="navbar-logo">
+            <img src="/images/logo.jpg" alt="Monad" className="navbar-logo-img" />
+            <span>Monad</span>
+          </div>
               </div>
               <p className="footer-description">
                 High-performance EVM-compatible blockchain powering the next generation of decentralized applications.

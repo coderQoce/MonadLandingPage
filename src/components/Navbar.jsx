@@ -26,10 +26,9 @@ const Navbar = ({ scrolled }) => {
           </div>
 
           <div className={`navbar-menu ${mobileMenuOpen ? 'open' : ''}`}>
-            {/* <a href="#technology" onClick={() => scrollToSection('technology')}>Technology</a> */}
+  
             <a href="#ecosystem" onClick={() => scrollToSection('ecosystem')}>Ecosystem</a>
-            {/* <a href="#backers" onClick={() => scrollToSection('backers')}>Backers</a>
-            <a href="#roadmap" onClick={() => scrollToSection('roadmap')}>Roadmap</a> */}
+            
           </div>
 
           <div className="navbar-mobile-toggle" onClick={toggleMobileMenu}>
