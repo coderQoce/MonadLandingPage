@@ -1,1 +1,43 @@
-{"name": "monad-landing-page", "version": "1.0.0", "description": "Modern, high-performance landing page for Monad blockchain", "main": "src/index.js", "scripts": {"start": "react-scripts start", "build": "npx react-scripts build", "test": "react-scripts test", "eject": "react-scripts eject", "postinstall": "chmod +x node_modules/.bin/react-scripts"}, "dependencies": {"react": "^18.2.0", "react-dom": "^18.2.0", "react-scripts": "5.0.1"}, "devDependencies": {"@types/react": "^18.2.0", "@types/react-dom": "^18.2.0"}, "browserslist": {"production": [">0.2%", "not dead", "not op_mini all"], "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]}, "keywords": ["react", "blockchain", "monad", "landing-page", "web3"], "author": "Monad Foundation", "license": "MIT"}
+{
+    "name": "monad-landing-page",
+    "version": "1.0.0",
+    "description": "Modern, high-performance landing page for Monad blockchain",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "node fix-bom.js && npx react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "postinstall": "chmod +x node_modules/.bin/react-scripts"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-scripts": "5.0.1"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "keywords": [
+        "react",
+        "blockchain",
+        "monad",
+        "landing-page",
+        "web3"
+    ],
+    "author": "Monad Foundation",
+    "license": "MIT"
+}

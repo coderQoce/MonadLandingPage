@@ -278,18 +278,38 @@
 }
 
 @media (max-width: 768px) {
-  .apps-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+  .ecosystem-controls {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .category-filters {
+    text-align: left;
+  }
+
+  .filter-label {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
   }
 
   .filter-buttons {
     gap: 0.5rem;
+    justify-content: center;
   }
 
   .filter-btn {
     font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
+    min-width: fit-content;
+  }
+
+  .apps-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
   }
 
   .search-input-wrapper {
@@ -298,36 +318,80 @@
 }
 
 @media (max-width: 480px) {
-  .apps-grid {
-    grid-template-columns: 1fr;
+  .ecosystem-header {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .ecosystem-controls {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .search-input-wrapper {
+    padding: 0.75rem 1rem;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+  }
+
+  .category-filters {
+    text-align: left;
+  }
+
+  .filter-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
   }
 
   .filter-buttons {
     justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
 
   .filter-btn {
     flex-shrink: 0;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+    min-width: auto;
+    white-space: nowrap;
   }
 
-  .ecosystem-footer {
-    padding: 2rem 1.5rem;
+  .filter-count {
+    font-size: 0.75rem;
   }
 
-  .submit-project h3 {
-    font-size: 1.5rem;
+  .apps-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
   }
-}
 
-/* Show More Button Styles */
-.show-more-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  padding: 0 1rem;
+  .ecosystem-results {
+    padding: 0 1rem;
+  }
+
+  .results-info {
+    font-size: 0.9rem;
+  }
+
+  .show-more-container {
+    padding: 0 1rem;
+  }
+
+  .show-more-btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
 }
 
 .show-more-btn {

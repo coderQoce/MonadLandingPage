@@ -1873,22 +1873,22 @@ export const ecosystemApps = [
 ];
 
 export const getCategoriesWithCounts = () => [
+  { id: 'all', name: 'All', count: ecosystemApps.length },
   { id: 'dex', name: 'DEX', count: ecosystemApps.filter(app => app.category === 'Dex').length },
   { id: 'lending', name: 'Lending', count: ecosystemApps.filter(app => app.category === 'Lending').length },
   { id: 'lst', name: 'LST', count: ecosystemApps.filter(app => app.category === 'LST').length },
+  { id: 'perp', name: 'Perp', count: ecosystemApps.filter(app => app.category === 'Perp').length },
   { id: 'aggregator', name: 'Aggregator', count: ecosystemApps.filter(app => app.category === 'Aggregator').length },
   { id: 'vault', name: 'Vault', count: ecosystemApps.filter(app => app.category === 'Vault').length },
-  { id: 'perp', name: 'Perp', count: ecosystemApps.filter(app => app.category === 'Perp').length },
   { id: 'bridge', name: 'Bridge', count: ecosystemApps.filter(app => app.category === 'Bridge').length },
   { id: 'infra', name: 'Infra', count: ecosystemApps.filter(app => app.category === 'Infra').length },
-  { id: 'launchpad', name: 'Launchpad', count: ecosystemApps.filter(app => app.category === 'Launchpad').length },
   { id: 'wallet', name: 'Wallet', count: ecosystemApps.filter(app => app.category === 'Wallet').length },
   { id: 'nft_marketplace', name: 'NFT Marketplace', count: ecosystemApps.filter(app => app.category === 'NFT Marketplace').length },
   { id: 'gamefi', name: 'GameFi', count: ecosystemApps.filter(app => app.category === 'GameFi').length },
   { id: 'socialfi', name: 'SocialFi', count: ecosystemApps.filter(app => app.category === 'SocialFi').length },
   { id: 'ai', name: 'AI', count: ecosystemApps.filter(app => app.category === 'AI').length },
-  { id: 'others', name: 'Others', count: ecosystemApps.filter(app => app.category === 'Others').length },
-  { id: 'all', name: 'All', count: ecosystemApps.length }
+  { id: 'launchpad', name: 'Launchpad', count: ecosystemApps.filter(app => app.category === 'Launchpad').length },
+  { id: 'others', name: 'Others', count: ecosystemApps.filter(app => app.category === 'Others').length }
 ];
 
 export const categories = getCategoriesWithCounts();
